@@ -7,6 +7,25 @@ Lectures: Uploaded and pre-recorded, two per week
 
 Discussion: Online (Zoom), Fridays 3pm-4pm Central European (Berlin) Time
 
+# Setup
+
+From the [rethinking package readme](https://github.com/rmcelreath/rethinking) on installing the rethinking package:
+
+There are three steps. (1) Install the C++ toolchain, (2) install cmdstanr, (3) install rethinking. Details follow.
+
+First, install the C++ toolchain. Go to https://mc-stan.org/docs/cmdstan-guide/cmdstan-installation.html#cpp-toolchain and follow the instructions for your platform.
+
+Second, install the cmdstanr package. Visit https://mc-stan.org/cmdstanr/. The first time you install cmdstanr, you will also need compile the libraries with cmdstanr::install_cmdstan(). All this of this bother is worth it. You just have to do it once. If you don't want to use MCMC, you don't have to complete this step.
+
+Third, you can install rethinking from within R using:
+
+```
+install.packages(c("coda","mvtnorm","devtools","loo","dagitty","shape"))
+devtools::install_github("rmcelreath/rethinking")
+```
+
+Note that the rethinking package is not on CRAN, just on github. The rethinking package is never going to be on CRAN. So if you get an error about rethinking not being available for your version of R, it is because you tried to install from CRAN. Use the github code above.
+
 # Purpose
 
 This course teaches data analysis, but it focuses on scientific models. The unfortunate truth about data is that nothing much can be done with it, until we say what caused it. We will prioritize conceptual, causal models and precise questions about those models. We will use Bayesian data analysis to connect scientific models to evidence. And we will learn powerful computational tools for coping with high-dimension, imperfect data of the kind that biologists and social scientists face.
